@@ -1,7 +1,7 @@
 # skill-development-project
 [ temporary ]
 
-# Badeges
+# Badges
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=siddharth-vagavolu_skill-development-project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=siddharth-vagavolu_skill-development-project)
 
