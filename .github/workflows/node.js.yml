@@ -1,16 +1,19 @@
-name: Node.js CI
+name: Test and Code Scan
 
+# "on" specifies the conditions for which the GitHub action would trigger 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
+# These are the jobs that are going to trigger when conditions are met
 jobs:
   build:
-
+    # runs on latest version of ubuntu (can be changed to a VPS)
     runs-on: ubuntu-latest
-
+    
+    # strategy matrix
     strategy:
       matrix:
         node-version: [12.x, 14.x]
@@ -22,6 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: npm ci # clean install
+    - run: npm run build --if-present # runs the build script
+    - run: npm test # runs the test
